@@ -12,7 +12,7 @@ package org.webrtc;
 
 import android.media.MediaCodecInfo;
 import android.media.MediaCodecInfo.CodecCapabilities;
-import android.os.Build;
+// import android.os.Build;
 import android.support.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
@@ -58,11 +58,11 @@ class MediaCodecUtils {
   static final int[] TEXTURE_COLOR_FORMATS = getTextureColorFormats();
 
   private static int[] getTextureColorFormats() {
-    if (Build.VERSION.SDK_INT >= 18) {
+      // if (Build.VERSION.SDK_INT >= 18) {
       return new int[] {MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface};
-    } else {
-      return new int[] {};
-    }
+      // } else {
+      // return new int[] {};
+      // }
   }
 
   static @Nullable Integer selectColorFormat(

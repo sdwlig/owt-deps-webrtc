@@ -301,9 +301,9 @@ public class WebRtcAudioManager {
   }
 
   private int getSampleRateForApiLevel() {
-    if (Build.VERSION.SDK_INT < 17) {
-      return WebRtcAudioUtils.getDefaultSampleRateHz();
-    }
+      // if (Build.VERSION.SDK_INT < 17) {
+      // return WebRtcAudioUtils.getDefaultSampleRateHz();
+      // }
     String sampleRateString = audioManager.getProperty(AudioManager.PROPERTY_OUTPUT_SAMPLE_RATE);
     return (sampleRateString == null) ? WebRtcAudioUtils.getDefaultSampleRateHz()
                                       : Integer.parseInt(sampleRateString);
@@ -312,9 +312,9 @@ public class WebRtcAudioManager {
   // Returns the native output buffer size for low-latency output streams.
   private int getLowLatencyOutputFramesPerBuffer() {
     assertTrue(isLowLatencyOutputSupported());
-    if (Build.VERSION.SDK_INT < 17) {
-      return DEFAULT_FRAME_PER_BUFFER;
-    }
+    // if (Build.VERSION.SDK_INT < 17) {
+    // return DEFAULT_FRAME_PER_BUFFER;
+    // }
     String framesPerBuffer =
         audioManager.getProperty(AudioManager.PROPERTY_OUTPUT_FRAMES_PER_BUFFER);
     return framesPerBuffer == null ? DEFAULT_FRAME_PER_BUFFER : Integer.parseInt(framesPerBuffer);

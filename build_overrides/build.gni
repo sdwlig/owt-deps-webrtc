@@ -52,3 +52,5 @@ if (host_os == "mac") {
              "hermetic toolchain if the minimum OS version is not met.")
   use_system_xcode = _result == 0
 }
+build_with_owt = false
+enable_base_tracing = false
